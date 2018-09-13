@@ -18,13 +18,15 @@ public class SieveOfEratosthenes {
 		int N;  //We need to find all prime numbers less than this number
 
 		A = args[0]; 
-		//N = 25; //Testing out if the class works as expected
 		N = Integer.parseInt(A); //make the input string to number format
+		
+		//N = 25; //Testing out if the class works as expected
+
 		SieveOfEratosthenes t = new SieveOfEratosthenes();
-		//t.Sieve(10);
-		//t.primesCount(t.Sieve(10));
-		int d[] = SieveOfEratosthenes.primesList(t.Sieve(N), SieveOfEratosthenes.primesCount(t.Sieve(N)));
-		String f = SieveOfEratosthenes.p(SieveOfEratosthenes.primesList(t.Sieve(N), SieveOfEratosthenes.primesCount(t.Sieve(N))));
+		boolean[] k = t.Sieve(N);
+		int l = t.primesCount(k);
+		int m[] = t.primesList(k, l);
+		String f = t.p(m);
 		
 	}
 
@@ -50,7 +52,8 @@ public class SieveOfEratosthenes {
 								
 			}
 		}
-			
+		
+		// this returns whether a number is prime or not with result of T/F
 		return isPrime;
 	}
 	
@@ -61,7 +64,8 @@ public class SieveOfEratosthenes {
 	            count++;
 	        }
 	    }
-	  //  System.out.println("Number of primes: " + count);
+	    
+	  //  this returns the count of primes based on isPrime = T
 	    return count;
 	}
 
@@ -75,13 +79,15 @@ public class SieveOfEratosthenes {
 	            a++;
 	        }   
 	    }
-	   // System.out.println("List of primes: " + Arrays.toString(listPrimes));
-	    System.out.println(Arrays.toString(listPrimes));
+	    
+	   // this returns the list of primes based on isPrimes=T and count of primes -2
 	    return listPrimes;
 	}
 	
 	public static String p(int[] listPrimes) {
 		String u = Arrays.toString(listPrimes);
+		System.out.println(u);
+		// this returns the string value of list of primes that can be used for testing purposes.
 		return u;
 		
 	}
