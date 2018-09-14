@@ -20,7 +20,7 @@ public class SieveOfEratosthenes {
 		//A = args[0]; 
 		//N = Integer.parseInt(A); //make the input string to number format
 		
-		N = 25; //Testing out if the class works as expected
+		//N = 25; //Testing out if the class works as expected
 
 		SieveOfEratosthenes t = new SieveOfEratosthenes();
 		boolean[] k = t.Sieve(N);
